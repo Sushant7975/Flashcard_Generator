@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Form, FieldArray, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { addFlashcard } from "../../Redux/flashcardsSlice";
 import TermCard from "./TermCard";
@@ -33,6 +34,28 @@ const CreateFlashCard = () => {
     terms: [{ title: "", definition: "", term_uploadimage: null }],
   };
 
+  const validationSchema = Yup.object({
+    groupName: Yup.string()
+      .min(5, "Group name must be 5 characters")
+      .max(20,"Group name must be at most 20 characters")
+      .required("Please Enter Group Name"),
+    description: Yup.string()
+      .min(20, "Description must be at least 20 characters")
+      .max(80,"Description must be at most 80 characters")
+      .required("Please Add Description"),
+    terms: Yup.array(
+      Yup.object({
+        title: Yup.string()
+          .min(5, "Term name should be 5 characters")
+          .max(15, "Term name should be at most 15 characters")
+          .required("Please Enter Term"),
+        definition: Yup.string()
+          .min(10, "Term definition shoud be 10 characters")
+          .max( 100, "Defination should be at most 100 characters")
+          .required("Please Enter Definition"),
+      })
+    ),
+  });
  
 
   const onSubmit = (values, { resetForm }) => {
@@ -64,6 +87,7 @@ const CreateFlashCard = () => {
       <div className="w-4/5 m-auto bg-red-50 py-2">
         <Formik
           initialValues={initialValues}
+          validationSchema={validationSchema}
           onSubmit={onSubmit}
           
         >
