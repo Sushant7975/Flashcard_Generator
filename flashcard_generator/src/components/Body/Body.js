@@ -3,6 +3,7 @@ import { Routes, Route, Link, useLocation  } from "react-router-dom";
 import CreateFlashCard from "../Create_Flashcard/CreateFlashCard"
 import MyFlashCards from "../Flashcards/MyFlashCards";
 import FlashCardDetails from "../Flashcards/FlashCardDetails";
+import Error from "../Error/Error";
 
 const Body = () => {
 
@@ -21,7 +22,7 @@ const Body = () => {
                 <Route path="/" element={<CreateFlashCard />} />
                 <Route path="/MyFlashCards" element={<MyFlashCards />} />
                 <Route   path="/FlashCardDetails/:resId" element={<FlashCardDetails />} />
-              
+                <Route path="*" element={<Error />} />
             </Routes>
         </div>
     )
