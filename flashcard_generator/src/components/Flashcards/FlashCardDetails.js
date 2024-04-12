@@ -17,10 +17,8 @@ const FlashcardDetails = () => {
   // using useState for adding active class
   
   // using useState for share Button on click share it will be visible
-   const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
   const onClose = () => { setVisible(false) }
-
-  
 
   if (!flashcard) {
     return <div className=''>Flashcard not found</div>;
