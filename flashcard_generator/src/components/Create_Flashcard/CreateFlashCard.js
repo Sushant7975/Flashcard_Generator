@@ -3,7 +3,7 @@ import { Formik, Form, FieldArray, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { addFlashcard } from "../../Redux/flashcardsSlice";
-import TermCard from "./TermCard";
+import TermCard from './TermCard'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaFileUpload } from "react-icons/fa";
@@ -56,7 +56,6 @@ const CreateFlashCard = () => {
       })
     ),
   });
- 
 
   const onSubmit = (values, { resetForm }) => {
     dispatch(

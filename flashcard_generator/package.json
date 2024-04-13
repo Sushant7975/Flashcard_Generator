@@ -1,5 +1,5 @@
 {
-  "name": "flashcard_generator",
+  "name": "flashcard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -46,3 +46,4 @@
     "tailwindcss": "^3.4.3"
   }
 }
+
