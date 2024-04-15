@@ -19,7 +19,7 @@ const termsSlice = createSlice({
                 term_uploadimage: term_uploadimage
             };
             state.terms.push(newTerm);
-            console.log('term state after adding:', state.terms[0]);
+            // console.log('term state after adding:', state.terms[0]);
 
             // Save state to local storage
             localStorage.setItem('terms', JSON.stringify(state.terms));

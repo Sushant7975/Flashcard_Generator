@@ -20,7 +20,7 @@ const flashcardsSlice = createSlice({
                 termsLength: termsLength,
             };
             state.flashcards.push(newFlashcard);
-            console.log('Flashcards state after adding:', state.flashcards);
+            // console.log('Flashcards state after adding:', state.flashcards);
 
             // Save state to local storage
             localStorage.setItem('flashcards', JSON.stringify(state.flashcards));

@@ -40,25 +40,25 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
   };
 
   return (
-    <div className='  '>
+    <div className='bg-red-50'>
       {terms.map((term, index) => (
-        <div className='flex mb-7 p-5 flex-wrap  ' key={index}>
+        <div className='flex mb-1 p-5 flex-wrap' key={index}>
           <div className='flex flex-wrap lg:flex-row md:flex-row sm:flex-row  md:items-start sm:items-start flex-col '>
             <div className=' sm:mt-5 md:mt-5 sm:pb-3 md:pb-5 flex lg:pb-8'>
-              <div className='py-2 px-4 bg-red-500 text-slate-50 rounded-full  mr-4'>{index + 1}</div>
+              <div className='py-2 px-4 bg-red-500 text-slate-50 rounded-full mt-4 mr-4'>{index + 1}</div>
             </div>
 
             {/* Term Title */}
             <div className='flex w-48  flex-col'>
               <div>
-                <h3 className='mb-2 text-md font-bold text-gray-500'>Enter Term*</h3>
+                <h3 className='mb-2 text-md font-bold text-gray-600'>Enter Term*</h3>
               </div>
               <div>
                 <Field
                   type='text'
                   name={`terms[${index}].title`}
                   placeholder='Enter Term Title'
-                  className='border-2 mb-4  h-10 pl-2 mt-2 w-full  bg-slate-200 rounded-md font-semibold'
+                  className='border-2 mb-2  h-10 pl-2 mt-2 w-full  bg-slate-200 rounded-md font-semibold'
                   innerRef={(el) => (titleInputRefs.current[index] = el)} // Assign ref to title input field
                 />
               </div>
@@ -68,7 +68,7 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
             {/* Term Definition */}
             <div className='flex flex-col   xl:ml-5 lg:ml-5 md:ml-5 ml-0 sm:ml-4'>
               <div>
-                <h3 className='mb-2 text-md font-bold text-gray-500'>Term Definition*</h3>
+                <h3 className='mb-2 text-md font-bold text-gray-600'>Term Definition*</h3>
               </div>
               <div>
                 <Field
@@ -127,8 +127,8 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
             <div className='flex flex-col mt-5'>
               {/* Delete icon */}
               {terms.length > 1 && (
-                <button type='button' className='ml-8 text-3xl ' onClick={() => handleDeleteTerm(index)}>
-                  <BiSolidTrashAlt />
+                <button type='button' className='ml-8 text-3xl  ' onClick={() => handleDeleteTerm(index)}>
+                  <BiSolidTrashAlt className='text-zinc-500 hover:text-red-500' />
                 </button>
               )}
 
@@ -141,7 +141,7 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
           </div>
         </div>
       ))}
-      <div className='flex  mx-4'>
+      <div className='flex mb-9 mx-4'>
       <div className='  pt-2 text-2xl mr-2 text-blue-500'>
       <IoMdAdd />
       </div>

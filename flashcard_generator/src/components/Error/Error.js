@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Error404 = () => {
     return (
-        <div className=' flex flex-col justify-center items-center dark:text-white '>
+        <div className=' flex flex-col justify-center items-center dark:text-white'>
             <h1 className='xl:text-[250px] md:text-[160px] sm:text-[60px] text-[70px] font-bold text-transparent'
                 style={{
                     backgroundImage: `url(${text_bg})`,

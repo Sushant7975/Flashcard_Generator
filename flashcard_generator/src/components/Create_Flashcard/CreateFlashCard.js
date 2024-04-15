@@ -41,7 +41,7 @@ const CreateFlashCard = () => {
       .required("Please Enter Group Name"),
     description: Yup.string()
       .min(20, "Description must be at least 20 characters")
-      .max(80,"Description must be at most 80 characters")
+      .max(250,"Description must be at most 250 characters")
       .required("Please Add Description"),
     terms: Yup.array(
       Yup.object({
@@ -57,33 +57,62 @@ const CreateFlashCard = () => {
     ),
   });
 
-  const onSubmit = (values, { resetForm }) => {
-    dispatch(
-      addFlashcard({
-        title: values.groupName,
-        uploadImage: values.uploadimage,
-        description: values.description,
-        terms: values.terms,
-        termsLength : values.terms.length
-      })
-    );
+  const onSubmit = async (values, { resetForm }) => {
+    try {
+      await dispatch(
+        addFlashcard({
+          title: values.groupName,
+          uploadImage: values.uploadimage,
+          description: values.description,
+          terms: values.terms,
+          termsLength : values.terms.length
+        })
+      );
+      
+      toast.success("👍 Flashcard Created!", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "QuotaExceededError") {
+        toast.error("Please reduce size of the uploaded data.", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } else {
+        console.error("An unexpected error occurred:", error);
+        toast.error("An unexpected error occurred. Please try again later.", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    }
     resetForm();
-    toast.success("👍 Flashcard Created!", {
-      position: "top-center",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
   };
+  
 
   return (
     <div className="">
       <ToastContainer />
-      <div className="w-4/5 m-auto bg-red-50 py-2">
+      <div className="w-4/5 m-auto bg-gradient-to-t from-green-200 to bg-yellow-200 py-2">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -94,7 +123,7 @@ const CreateFlashCard = () => {
 
             <Form  >
               {/* for upper part img title and description  */}
-              <div className="shadow-lg  bg-white rounded-md p-5 pl-12 py-7 ">
+              <div className="shadow-lg bg-red-50 rounded-md p-5 pl-12 py-7 ">
 
                 {/* title and img in this div  */}
                 <div className="flex flex-wrap ">
@@ -104,7 +133,7 @@ const CreateFlashCard = () => {
                  <div   className="w-96 px-3 "> 
                      
                      <label
-                       className="text-zinc-500 font-bold text-md"
+                       className="text-zinc-600 font-bold text-md"
                        htmlFor="groupName"
                      >
                        Group Name*
@@ -194,7 +223,7 @@ const CreateFlashCard = () => {
 
               <div className="  w-full my-4 px-3">
                 <label
-                  className="text-zinc-500 mt-3 font-bold text-md"
+                  className="text-zinc-600 mt-3 font-bold text-md"
                   htmlFor="description"
                 >
                   
@@ -223,7 +252,7 @@ const CreateFlashCard = () => {
 
 
 
-              <div className="m-auto pl-5 py-5 bg-white mt-5 shadow-md mb-10  rounded-md">
+              <div className="m-auto pl-5 py-5 bg-red-50 mt-5 shadow-md mb-10  rounded-md">
                 <FieldArray
                   name="terms"
                   render={({ push, remove, form: { values, setFieldValue } }) => (
@@ -240,7 +269,7 @@ const CreateFlashCard = () => {
               <div className="flex justify-center mb-10">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 hover:from-green-500 hover:via-yellow-500 hover:to-red-500 text-white font-semibold py-1 px-4 rounded"
+                  className="text-xl border-2 border-amber-500 h-10 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 hover:from-green-500 hover:via-yellow-500 hover:to-red-500 text-white font-semibold p-2 py-1 px-4 hover:scale-110 rounded-md"
                 >
                   Create
                 </button>

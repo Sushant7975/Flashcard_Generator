@@ -38,7 +38,7 @@ const ShareModel = ({ visible, onClose }) => {
     if (!visible) return null;
     return (
         <div>
-            {/* importing tost to show notification when url copied */}
+            {/* importing toast to show notification when url copied */}
             <ToastContainer />
             <div onClick={HandleonClose} id="modal" className="fixed flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm  p-4  inset-0  w-full h-full">
                 <div className=" relative items-center w-full max-w-md md:h-auto">

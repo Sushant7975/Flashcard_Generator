@@ -11,7 +11,7 @@ const Body = () => {
 
 
     return (
-        <div className="mt-1 h-full bg-red-50">
+        <div className="mt-1 h-full bg-gradient-to-t from-green-200 to bg-yellow-200">
             <div className="w-4/5 m-auto border-b-[1.5px] border-gray-400">
                 <ul className="flex font-bold  text-lg">
                     <li className={`pr-5 mt-5 ${location.pathname === '/' ? 'text-red-500 border-b-[3px] pb-1 mr-1 pl-2  rounded-sm border-red-500' : ''}`}><Link to="/">Create New</Link></li>

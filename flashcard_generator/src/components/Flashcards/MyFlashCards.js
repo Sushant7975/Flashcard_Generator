@@ -24,7 +24,7 @@ const MyFlashCards = () => {
     };
 
     return (
-        <div className=' pb-40 bg-red-50 '>
+        <div className=' pb-40 bg-gradient-to-t from-green-200 to bg-yellow-200 '>
             <div className='w-[40%] sm:w-4/5  flex m-auto flex-wrap justify-center mt-5'>
 
                 {flashcards.length === 0 ? (
@@ -58,7 +58,7 @@ const MyFlashCards = () => {
                             <p className='text-base h-12 text-emerald-900 overflow-hidden font-bold '>{flashcard.description}</p>
                             <p className='text-md text-gray-900 font-medium my-5'>{flashcard.termsLength} Cards</p>
                             <div className='mb-5'>
-                                <Link className="inline-flex mt-auto items-center px-8 sm:px-12 md:px-12 lg:px-12 xl:px-12 py-2 text-center max-w-xs  dark:border-red-500  bg-white rounded-full hover:bg-red-100 font-bold  text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800  text-lg mr-2 mb-2" to={`/FlashcardDetails/${flashcard.id}`}>View</Link>
+                                <Link className="inline-flex mt-auto items-center px-8 sm:px-12 md:px-12 lg:px-12 xl:px-12 py-2 text-center max-w-xs  dark:border-red-500  bg-white rounded-full hover:bg-red-100 font-bold  text-white bg-gradient-to-r from-green-500 to-yellow-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  text-lg mr-2 mb-2" to={`/FlashcardDetails/${flashcard.id}`}>View Cards</Link>
                             </div>
                         </div>
                     </div>
