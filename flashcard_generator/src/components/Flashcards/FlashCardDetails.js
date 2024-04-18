@@ -13,8 +13,6 @@ const FlashcardDetails = () => {
     state.flashcards.flashcards.find((flashcard) => flashcard.id === resId)
   );
 
-  
-
   if (!flashcard) {
     return <div className="">Flashcard not found</div>;
   }
@@ -41,9 +39,6 @@ const FlashcardDetails = () => {
           <Carousel terms={flashcard.terms} />
         </div>
       </div>
-
-     
-     
     </div>
   );
 };

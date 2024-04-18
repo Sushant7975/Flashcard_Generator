@@ -10,7 +10,7 @@ import { TfiBackRight } from "react-icons/tfi";
 const Carousel = ({ terms }) => {
   const [currentTermIndex, setCurrentTermIndex] = useState(0);
 
-   // using useState for share Button on click share it will be visible
+  // using useState for share Button on click share it will be visible
   const [visible, setVisible] = useState(false);
   const onClose = () => {
     setVisible(false);
@@ -31,8 +31,6 @@ const Carousel = ({ terms }) => {
   if (!terms || terms.length === 0) {
     return <div>No terms available</div>;
   }
-
- 
 
   return (
     // maindiv
@@ -105,30 +103,30 @@ const Carousel = ({ terms }) => {
             </div>
           </div>
         </div>
-         {/* button for share, download, print  */}
-      <div className=" w-[250px] mt-16 sm:mt-1 rounded-lg h-48">
-        <div
-          onClick={() => setVisible(true)}
-          className="bg-white dark:bg-gray-300 flex cursor-pointer mb-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10"
-        >
-          <TfiBackRight className="text-2xl mx-5" />
-          Share
+        {/* button for share, download, print  */}
+        <div className=" w-[250px] mt-16 sm:mt-1 rounded-lg h-48">
+          <div
+            onClick={() => setVisible(true)}
+            className="bg-white dark:bg-gray-300 flex cursor-pointer mb-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10"
+          >
+            <TfiBackRight className="text-2xl mx-5" />
+            Share
+          </div>
+          <div className="bg-white dark:bg-gray-300 flex cursor-pointer my-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10">
+            <BsCloudDownload className="text-2xl mx-5" />
+            Download
+          </div>
+          <div
+            onClick={() => {
+              window.print();
+            }}
+            className="bg-white dark:bg-gray-300 flex cursor-pointer my-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10"
+          >
+            <BsPrinter className="text-2xl mx-5" />
+            Print
+          </div>
         </div>
-        <div className="bg-white dark:bg-gray-300 flex cursor-pointer my-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10">
-          <BsCloudDownload className="text-2xl mx-5" />
-          Download
-        </div>
-        <div
-          onClick={() => {
-            window.print();
-          }}
-          className="bg-white dark:bg-gray-300 flex cursor-pointer my-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10"
-        >
-          <BsPrinter className="text-2xl mx-5" />
-          Print
-        </div>
-        </div>
-         <ShareModel onClose={onClose} visible={visible} />
+        <ShareModel onClose={onClose} visible={visible} />
       </div>
     </div>
   );
