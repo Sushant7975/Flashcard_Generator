@@ -9,7 +9,7 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="flex max-w-screen-2xl shadow-lg justify-between text-left mx-auto bg-gradient-to-r from-yellow-200 to bg-green-200">
+    <div className="flex max-w-screen-3xl shadow-lg justify-between text-left mx-auto bg-gradient-to-r from-yellow-200 to bg-green-200">
       <div className="flex items-center font-medium text-3xl py-4">
         <img
           className="h-10 my-auto ml-3 sm:ml-5"

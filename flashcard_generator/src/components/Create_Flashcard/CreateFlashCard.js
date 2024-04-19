@@ -36,22 +36,22 @@ const CreateFlashCard = () => {
 
   const validationSchema = Yup.object({
     groupName: Yup.string()
-      .min(5, "Group name must be 5 characters")
-      .max(20, "Group name must be at most 20 characters")
+      .min(3, "Group name must be 3 characters")
+      .max(25, "Group name must be at most 25 characters")
       .required("Please Enter Group Name"),
     description: Yup.string()
-      .min(20, "Description must be at least 20 characters")
-      .max(250, "Description must be at most 250 characters")
+      .min(10, "Description must be at least 10 characters")
+      .max(220, "Description must be at most 220 characters")
       .required("Please Add Description"),
     terms: Yup.array(
       Yup.object({
         title: Yup.string()
-          .min(5, "Term name should be 5 characters")
-          .max(15, "Term name should be at most 15 characters")
+          .min(3, "Term name should be 3 characters")
+          .max(25, "Term name should be at most 25 characters")
           .required("Please Enter Term"),
         definition: Yup.string()
           .min(10, "Term definition shoud be 10 characters")
-          .max(100, "Defination should be at most 100 characters")
+          .max(150, "Defination should be at most 150 characters")
           .required("Please Enter Definition"),
       })
     ),
@@ -84,7 +84,7 @@ const CreateFlashCard = () => {
         error instanceof DOMException &&
         error.name === "QuotaExceededError"
       ) {
-        toast.error("Please reduce size of the uploaded data.", {
+        toast.error("Please reduce size of the uploaded Image.", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -122,7 +122,7 @@ const CreateFlashCard = () => {
         >
           {({ values, setFieldValue }) => (
             <Form>
-              {/* for upper part img title and description  */}
+              {/* div for upper part img title and description  */}
               <div className="shadow-lg bg-red-50 rounded-md p-5 pl-12 py-7 ">
                 {/* title and img in this div  */}
                 <div className="flex flex-wrap ">

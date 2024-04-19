@@ -34,49 +34,56 @@ const Carousel = ({ terms }) => {
 
   return (
     // maindiv
-    <div className=" h-[100%] ">
+    <div className="">
       {/* both title and descriptions  */}
-      <div className=" h-screen mt-5 ">
-        <div className="flex flex-col sm:flex-row lg:flex-row md:flex-row xl:flex-row">
+      <div className="sm:mt-5 mt-2">
+        <div className="flex flex-col sm:flex-row">
           {/* titles  */}
 
-          <div className="w-[80%] sm:w-[30%]  mb-5  shadow-lg rounded-lg flex flex-col  text-center  items-center  mr-5  overflow-auto h-[285px]  bg-white">
+          <div className="w-full sm:w-[40%]  mb-2  shadow-lg rounded-lg flex flex-col  text-center  items-center  mr-3  overflow-auto h-[285px]  bg-white">
             <p className="my-5 text-xl font-bold text-gray-700 w-[90%] mx-auto pb-2 border-b-[1.5px] border-red-100">
               Flashcards
             </p>
             <div className=" ">
               {terms.map((term, index) => (
-                <div className="">
-                  <div
-                    key={index}
-                    className="flex pb-2"
-                    onClick={() => setCurrentTermIndex(index)}
-                  >
-                    {currentTermIndex === index ? (
-                      <RiArrowRightSLine className="mt-1  text-xl" />
-                    ) : null}{" "}
-                    <span className="text-lg font-medium to-slate-900 ">
-                      {" "}
-                      {term.title}{" "}
+                <div
+                  key={index}
+                  className="flex pb-2"
+                  onClick={() => setCurrentTermIndex(index)}
+                >
+                  {currentTermIndex === index ? (
+                    <RiArrowRightSLine className="mt-1 text-red-500 text-xl" />
+                  ) : null}
+                  {currentTermIndex === index ? (
+                    <span className="text-xl font-medium text-red-500">
+                      {term.title}
                     </span>
-                  </div>
+                  ) : (
+                    <span className="text-xl font-medium to-slate-900">
+                      {term.title}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="ml-0 w-[80%] bg-white shadow-lg rounded-lg  h-[350px]   py-10 pl-4 border-[1px]">
+          <div className="ml-0 w-full bg-white shadow-lg rounded-lg  h-[350px] py-10 pl-4 border-[1px]">
             {/* img and defination  */}
-            <div className=" flex flex-col sm:flex-row  h-[286px]  ">
-              <div className=" w-[50%] my-4 pr-2">
+            <div className=" flex flex-col items-center sm:items-start sm:flex-row  h-[286px]  ">
+              <div className="w-[50%] my-4 pr-2">
                 {terms[currentTermIndex].term_uploadimage ? (
                   <img
                     src={terms[currentTermIndex].term_uploadimage}
                     alt="Flashcard_Image"
-                    className="max-h-[286px]  "
+                    className="max-h-[286px] rounded-md"
                   />
                 ) : (
-                  <img src={flashGif} alt="Flashcard_Image" className=" " />
+                  <img
+                    src={flashGif}
+                    alt="Flashcard_Image"
+                    className="max-h-[286px] rounded-md"
+                  />
                 )}
               </div>
 
@@ -86,33 +93,39 @@ const Carousel = ({ terms }) => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center mt-8 ">
+            <div className="flex justify-center items-center mt-8 ">
               <p className="mx-auto  h-3 w-60 bg-black opacity-5  rounded-[100%] shadow-xl"></p>
             </div>
 
-            <div className="flex justify-center p-2  my-3">
-              <button className="text-2xl  mr-5" onClick={handlePrev}>
-                <RiArrowLeftSLine className="hover:scale-125 hover:text-red-500" />
+            <div className="flex justify-center p-2 sm:my-3">
+              <button
+                className="text-3xl hover:text-blue-700 mr-5"
+                onClick={handlePrev}
+              >
+                <RiArrowLeftSLine />
               </button>
               <span className="mb-1">
                 {currentTermIndex + 1} / {terms.length}
               </span>
-              <button className="text-2xl  ml-5" onClick={handleNext}>
-                <RiArrowRightSLine className="hover:scale-125 hover:text-red-500" />
+              <button
+                className="text-3xl hover:text-blue-700 ml-5"
+                onClick={handleNext}
+              >
+                <RiArrowRightSLine />
               </button>
             </div>
           </div>
         </div>
         {/* button for share, download, print  */}
-        <div className=" w-[250px] mt-16 sm:mt-1 rounded-lg h-48">
+        <div className=" w-full mt-16 sm:mt-1 ml-2 rounded-lg h-48">
           <div
             onClick={() => setVisible(true)}
-            className="bg-white dark:bg-gray-300 flex cursor-pointer mb-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10"
+            className="bg-white flex cursor-pointer mb-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10"
           >
             <TfiBackRight className="text-2xl mx-5" />
             Share
           </div>
-          <div className="bg-white dark:bg-gray-300 flex cursor-pointer my-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10">
+          <div className="bg-white flex cursor-pointer my-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10">
             <BsCloudDownload className="text-2xl mx-5" />
             Download
           </div>
@@ -120,7 +133,7 @@ const Carousel = ({ terms }) => {
             onClick={() => {
               window.print();
             }}
-            className="bg-white dark:bg-gray-300 flex cursor-pointer my-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10"
+            className="bg-white flex cursor-pointer my-4 drop-shadow-md hover:scale-110 rounded-lg w-[250px] p-2 h-10"
           >
             <BsPrinter className="text-2xl mx-5" />
             Print

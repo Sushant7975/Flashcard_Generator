@@ -1,3 +1,9 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -17,54 +23,3 @@
   background: #cd9494;
 }
 
-/* import { IoIosArrowForward } from 'react-icons/ioios'; */
-/* 
-.active{
-  color: red;
-  border-bottom: 4px solid red;
-  border-radius: 4px;
-  padding: 7px 4px;
-  
-}
-.activeTerm{
-  color: red;
-  font-size: larger;
-  font-weight: bold;
-  margin-left: 10px;
-}
-.activeTerm > .icon{
-  display: inline-block;
-}
-.activeCarouselButton{
-background-color: red;
-}
-
-.space-between{
-  justify-content: space-between;
-}
-.space-evenly{
-  justify-content: space-evenly;
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

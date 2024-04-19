@@ -40,7 +40,7 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
   return (
     <div className="bg-red-50">
       {terms.map((term, index) => (
-        <div className="flex mb-1 p-5 flex-wrap" key={index}>
+        <div className="flex mb-3 p-5 flex-wrap" key={index}>
           <div className="flex flex-wrap lg:flex-row md:flex-row sm:flex-row  md:items-start sm:items-start flex-col ">
             <div className=" sm:mt-5 md:mt-5 sm:pb-3 md:pb-5 flex lg:pb-8">
               <div className="py-2 px-4 bg-red-500 text-slate-50 rounded-full mt-4 mr-4">
@@ -87,7 +87,7 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
                 />
               </div>
               <ErrorMessage
-                name={`terms[${index}].definition`}
+                name={`terms[${index}].definition`} 
                 component="div"
                 className="text-red-500"
               />
@@ -183,7 +183,7 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
           </div>
         </div>
       ))}
-      <div className="flex mb-9 mx-4">
+      <div className="flex mx-4">
         <div className="  pt-2 text-2xl mr-2 text-blue-500">
           <IoMdAdd />
         </div>

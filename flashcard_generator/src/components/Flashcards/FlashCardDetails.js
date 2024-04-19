@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import Carousel from "./Carousel";
 import { FaArrowLeft } from "react-icons/fa";
 
-// import ShareModel from "./ShareModel";
-
 const FlashcardDetails = () => {
   const { resId } = useParams();
   const flashcard = useSelector((state) =>
@@ -21,7 +19,7 @@ const FlashcardDetails = () => {
 
   return (
     <div className="w-9/12 m-auto overflow-hidden mt-1 bg-gradient-to-t from-green-200 to bg-yellow-200">
-      <div>
+      <div className="bg-gradient-to-t from-green-200 to bg-yellow-200">
         <div className="">
           <div className="flex overflow-hidden">
             <Link className="text-xl mt-3 " to={"/MyFlashCards"}>

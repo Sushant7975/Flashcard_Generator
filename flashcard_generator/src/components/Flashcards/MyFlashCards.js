@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFlashcard } from "../../Redux/flashcardsSlice";
-import Logo from "../Navbar/logo.png";
-
+import defo1 from "../Navbar/defo1.JPG";
 import { BsFillTrash3Fill } from "react-icons/bs";
 
 const MyFlashCards = () => {
@@ -24,7 +23,7 @@ const MyFlashCards = () => {
   };
 
   return (
-    <div className=" pb-40 bg-gradient-to-t from-green-200 to bg-yellow-200 ">
+    <div className=" pb-48 min-h-screen bg-gradient-to-t from-green-200 to bg-yellow-200 ">
       <div className="w-[40%] sm:w-4/5  flex m-auto flex-wrap justify-center mt-5">
         {flashcards.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-[80vh]">
@@ -47,18 +46,18 @@ const MyFlashCards = () => {
             >
               <BsFillTrash3Fill size={28} />
             </button>
-            <div className="border-2 w-72 rounded-md h-64 text-center   bg-white relative">
+            <div className=" p-1 border-2 border-gray-600 w-72 rounded-md h-64 text-center bg-gradient-to-tr from-yellow-200 to bg-green-200 relative">
               {flashcard.uploadImage ? (
                 <img
                   src={flashcard.uploadImage}
                   alt={`Flashcard_Image_${flashcard.id}`}
-                  className="w-16 h-16 rounded-full border-[2px] border-slate-400 object-center absolute bottom-56 left-1/2 transform -translate-x-1/2"
+                  className="w-16 h-16 rounded-full border-[2px] border-slate-400 object-center absolute bottom-56 left-1/2 transform -translate-x-1/2 hover:scale-110"
                 />
               ) : (
                 <img
-                  src={Logo}
+                  src={defo1}
                   alt={`Static_Image_${flashcard.id}`}
-                  className="w-16 h-16 rounded-full absolute bottom-56 left-1/2 transform  border-zinc-400 shadow-2xl border-[1px]  -translate-x-1/2"
+                  className="w-16 h-16 rounded-full absolute bottom-56 left-1/2 transform  border-zinc-400 shadow-2xl border-[1px]  -translate-x-1/2 hover:scale-110"
                 />
               )}
 
@@ -68,7 +67,7 @@ const MyFlashCards = () => {
                 </h2>
               </div>
 
-              <p className="text-base h-12 text-emerald-900 overflow-hidden font-bold ">
+              <p className="text-base h-12 text-emerald-900 overflow-hidden font-bold">
                 {flashcard.description}
               </p>
               <p className="text-md text-gray-900 font-medium my-5">
