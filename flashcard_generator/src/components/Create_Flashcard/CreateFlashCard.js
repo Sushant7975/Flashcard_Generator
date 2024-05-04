@@ -84,7 +84,7 @@ const CreateFlashCard = () => {
         error instanceof DOMException &&
         error.name === "QuotaExceededError"
       ) {
-        toast.error("Please reduce size of the uploaded Image.", {
+        toast.error("Please upload the Image size below 700kb.", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,

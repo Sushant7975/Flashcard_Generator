@@ -55,11 +55,11 @@ const Carousel = ({ terms }) => {
                     <RiArrowRightSLine className="mt-1 text-red-500 text-xl" />
                   ) : null}
                   {currentTermIndex === index ? (
-                    <span className="text-xl font-medium text-red-500">
+                    <span className="text-xl font-medium text-red-500 cursor-pointer">
                       {term.title}
                     </span>
                   ) : (
-                    <span className="text-xl font-medium to-slate-900">
+                    <span className="text-xl font-medium to-slate-900 cursor-pointer">
                       {term.title}
                     </span>
                   )}

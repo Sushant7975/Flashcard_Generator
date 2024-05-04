@@ -24,7 +24,7 @@ const MyFlashCards = () => {
 
   return (
     <div className=" pb-48 min-h-screen bg-gradient-to-t from-green-200 to bg-yellow-200 ">
-      <div className="w-[40%] sm:w-4/5  flex m-auto flex-wrap justify-center mt-5">
+      <div className="w-[40%] sm:w-4/5 flex m-auto flex-wrap justify-center mt-5">
         {flashcards.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-[80vh]">
             <div className="text-red-600 m-2 font-bold">
@@ -40,13 +40,14 @@ const MyFlashCards = () => {
 
         {flashcards.slice(0, visibleCards).map((flashcard) => (
           <div className="my-8 mx-2 relative" key={flashcard.id}>
-            <button
+        
+            <div className=" p-1 border-2 border-gray-600 w-72 rounded-md h-64 text-center bg-gradient-to-tr from-yellow-200 via-red-50 to bg-green-200 relative hover:scale-110">
+                  <button
               className="text-gray-500 p-1 mt-2 absolute top-1 z-10 right-3 rounded-lg"
               onClick={() => handleDeleteClick(flashcard.id)}
             >
               <BsFillTrash3Fill size={28} />
             </button>
-            <div className=" p-1 border-2 border-gray-600 w-72 rounded-md h-64 text-center bg-gradient-to-tr from-yellow-200 to bg-green-200 relative">
               {flashcard.uploadImage ? (
                 <img
                   src={flashcard.uploadImage}
@@ -62,7 +63,7 @@ const MyFlashCards = () => {
               )}
 
               <div className="mt-10 mb-3">
-                <h2 className="text-xl font-bold text-zinc-600">
+                <h2 className="text-xl font-bold text-red-600">
                   {flashcard.title}
                 </h2>
               </div>
@@ -75,7 +76,7 @@ const MyFlashCards = () => {
               </p>
               <div className="mb-5">
                 <Link
-                  className="inline-flex mt-auto items-center px-8 sm:px-12 md:px-12 lg:px-12 xl:px-12 py-2 text-center max-w-xs  dark:border-red-500  bg-white rounded-full hover:bg-red-100 font-bold  text-white bg-gradient-to-r from-green-500 to-yellow-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  text-lg mr-2 mb-2"
+                  className="inline-flex mt-auto items-center px-8 sm:px-12 md:px-12 lg:px-12 xl:px-12 py-2 text-center max-w-xs  bg-white rounded-full hover:bg-red-100 font-bold  text-white bg-gradient-to-r from-green-500 to-yellow-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-lime-600  text-lg mr-2 mb-2"
                   to={`/FlashcardDetails/${flashcard.id}`}
                 >
                   View Cards

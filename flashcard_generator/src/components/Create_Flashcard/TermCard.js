@@ -173,7 +173,7 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
 
                 {/* Edit icon with onClick event to focus on title input */}
                 <div
-                  className="ml-8 text-3xl mt-2 text-blue-500"
+                  className="ml-8 text-3xl mt-2 text-blue-500 cursor-pointer"
                   onClick={() => focusOnTitleInput(index)}
                 >
                   <TbEdit />
@@ -183,9 +183,11 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
           </div>
         </div>
       ))}
-      <div className="flex mx-4">
+      <div className="flex mx-4 cursor-pointer">
         <div className="  pt-2 text-2xl mr-2 text-blue-500">
-          <IoMdAdd />
+          <IoMdAdd  onClick={() =>
+              push({ title: "", definition: "", term_uploadimage: null })
+            }  />
         </div>
         <div>
           <button
