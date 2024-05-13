@@ -46,11 +46,11 @@ const CreateFlashCard = () => {
     terms: Yup.array(
       Yup.object({
         title: Yup.string()
-          .min(3, "Term name should be 3 characters")
+          .min(3, "Term name should be at least 3 characters")
           .max(25, "Term name should be at most 25 characters")
           .required("Please Enter Term"),
         definition: Yup.string()
-          .min(10, "Term definition shoud be 10 characters")
+          .min(10, "Term definition shoud be at least 10 characters")
           .max(200, "Defination should be at most 200 characters")
           .required("Please Enter Definition"),
       })
