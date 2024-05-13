@@ -41,7 +41,7 @@ const CreateFlashCard = () => {
       .required("Please Enter Group Name"),
     description: Yup.string()
       .min(10, "Description must be at least 10 characters")
-      .max(220, "Description must be at most 220 characters")
+      .max(300, "Description must be at most 300 characters")
       .required("Please Add Description"),
     terms: Yup.array(
       Yup.object({
@@ -51,7 +51,7 @@ const CreateFlashCard = () => {
           .required("Please Enter Term"),
         definition: Yup.string()
           .min(10, "Term definition shoud be 10 characters")
-          .max(150, "Defination should be at most 150 characters")
+          .max(200, "Defination should be at most 200 characters")
           .required("Please Enter Definition"),
       })
     ),
