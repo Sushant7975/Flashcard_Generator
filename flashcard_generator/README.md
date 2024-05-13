@@ -1,4 +1,4 @@
-<img src="./flashcard_generator/src/components/Navbar/Flashcardimg.png" alt="alt text" width="400" title="optional image">
+<img src="./src/components/Navbar/Flashcardimg.png" alt="alt text" width="400" title="optional image">
 
 # AlmaBetter-Flashcard-Generator
 
