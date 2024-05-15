@@ -116,8 +116,8 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
                     htmlFor={`terms.${index}.term_uploadimage`}
                     className="w-40 h-[38px] cursor-pointer px-3 mx-3 mt-10 py-1 bg-gray-200 border-gray-200 flex items-center justify-center rounded"
                   >
-                    <MdOutlineDriveFolderUpload className="text-[2em] text-blue-600 p-1" />
-                    <span className="text-blue-600 font-bold">
+                    <MdOutlineDriveFolderUpload className="text-[2em] text-blue-700 p-1" />
+                    <span className="text-blue-700 font-bold">
                       Select Image
                     </span>
                   </label>
