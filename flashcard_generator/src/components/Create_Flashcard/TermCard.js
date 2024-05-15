@@ -51,7 +51,7 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
             {/* Term Title */}
             <div className="flex w-48  flex-col">
               <div>
-                <h3 className="mb-2 text-md font-bold text-gray-600">
+                <h3 className="mb-2 text-md font-bold text-zinc-600">
                   Enter Term*
                 </h3>
               </div>
@@ -74,7 +74,7 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
             {/* Term Definition */}
             <div className="flex flex-col   xl:ml-5 lg:ml-5 md:ml-5 ml-0 sm:ml-4">
               <div>
-                <h3 className="mb-2 text-md font-bold text-gray-600">
+                <h3 className="mb-2 text-md font-bold text-zinc-600">
                   Term Definition*
                 </h3>
               </div>
@@ -116,8 +116,8 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
                     htmlFor={`terms.${index}.term_uploadimage`}
                     className="w-40 h-[38px] cursor-pointer px-3 mx-3 mt-10 py-1 bg-gray-200 border-gray-200 flex items-center justify-center rounded"
                   >
-                    <MdOutlineDriveFolderUpload className="text-[2em] text-blue-700 p-1" />
-                    <span className="text-blue-700 font-bold">
+                    <MdOutlineDriveFolderUpload className="text-[2em] text-blue-600 p-1" />
+                    <span className="text-blue-600 font-bold">
                       Select Image
                     </span>
                   </label>
@@ -184,14 +184,14 @@ const TermCard = ({ terms, push, remove, setFieldValue }) => {
         </div>
       ))}
       <div className="flex mx-4 cursor-pointer">
-        <div className="  pt-2 text-2xl mr-2 text-blue-500">
+        <div className="  pt-2 text-2xl mr-2 text-blue-700">
           <IoMdAdd  onClick={() =>
               push({ title: "", definition: "", term_uploadimage: null })
             }  />
         </div>
         <div>
           <button
-            className="pr-4 py-2 text-blue-500 font-medium"
+            className="pr-4 py-2 text-blue-700 font-medium"
             type="button"
             onClick={() =>
               push({ title: "", definition: "", term_uploadimage: null })
