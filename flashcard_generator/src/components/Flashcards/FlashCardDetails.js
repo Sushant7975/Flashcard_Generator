@@ -26,12 +26,12 @@ const FlashcardDetails = () => {
               <FaArrowLeft className="hover:scale-110" />
             </Link>
             <span>
-              <h1 className="ml-10 font-bold text-lg py-2">
+              <h1 className="ml-10 font-bold text-xl py-2">
                 {flashcard.title}
               </h1>
             </span>
           </div>
-          <p className="ml-16 font-normal">{flashcard.description}</p>
+          <p className="ml-16 font-normal text-lg">{flashcard.description}</p>
         </div>
         <div>
           <Carousel terms={flashcard.terms} />
